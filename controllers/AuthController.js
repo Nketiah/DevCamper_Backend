@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler")
 const crypto = require('crypto');
-// const sendEmail = require('../utils/sendEmail');
+const sendEmail = require('../helpers/sendEmail');
 const ErrorResponse = require("../helpers/errorResponse")
 const User = require('../models/User');
 
@@ -150,10 +150,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse('Email could not be sent', 500));
   }
 
-  res.status(200).json({
-    success: true,
-    data: user
-  });
+  res.status(200).json({success: true, data: user });
 });
 
 // @desc      Reset password
@@ -184,6 +181,7 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res);
 });
 
+
 // Get token from model, create cookie and send response
 const sendTokenResponse = (user, statusCode, res) => {
   // Create token
@@ -203,8 +201,5 @@ const sendTokenResponse = (user, statusCode, res) => {
   res
     .status(statusCode)
     .cookie('token', token, options)
-    .json({
-      success: true,
-      token
-    });
+    .json({success: true,token });
 };

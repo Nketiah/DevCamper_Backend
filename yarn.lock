@@ -1015,6 +1015,11 @@ node-geocoder@^4.1.0:
     bluebird "^3.5.2"
     node-fetch "^2.6.0"
 
+nodemailer@^6.7.6:
+  version "6.7.6"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.6.tgz#d3de8f644eaa0dad784d1be1375c596de492f3fc"
+  integrity sha512-/6KF/umU7r7X21Y648/yiRLrgkfz0dmpyuo4BfgYWIpnT/jCbkPTvegMfxCsDAu+O810p2L1BGXieMTPp3nJVA==
+
 nodemon@^2.0.18:
   version "2.0.18"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.18.tgz#0f5a3aa7b4587f2626e6f01369deba89cb0462a2"
