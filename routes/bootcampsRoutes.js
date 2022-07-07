@@ -10,6 +10,7 @@ const {
     bootcampPhotoUpload
 } = require('../controllers/BootcampController')
 const coursesRouter = require('./courseRoutes')
+const reviewsRouter = require('./reviewsRoutes')
 const advancedResults = require("../middleware/advancedResults")
 const Bootcamp = require("../models/Bootcamp")
 const {protect, authorize} = require("../middleware/authMiddleware")
@@ -17,6 +18,7 @@ const {protect, authorize} = require("../middleware/authMiddleware")
 
 //Re-route into other resource router
 router.use("/:bootcampId/courses", coursesRouter)
+router.use("/:bootcampId/reviews", reviewsRouter)
 
 router
      .route("/")
